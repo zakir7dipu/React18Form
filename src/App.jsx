@@ -3,7 +3,7 @@ import Card from "./ui/Card/index.jsx";
 import CardHeader from "./ui/Card/Header";
 import From from "./ui/From";
 import FromRow from "./ui/From/Row.jsx";
-import InputField from "./ui/InputField/Index.jsx";
+import InputField from "./ui/InputField";
 import CardBody from "./ui/Card/Body";
 import Switch from "./ui/Switch";
 import TimePicker from "./ui/TimePicker/index.jsx";
@@ -84,11 +84,11 @@ function App() {
 
         if(name && tel && street && availablePostalCodes && email && postalCode && number && minimumOrderAmount && provisionFee && startWorkingTime && stopWorkingTime && agb) {
             dispatch(storeUserInfo(fromData))
+            resetHandler()
         }
     }
 
-    const resetHandler= (e)=>{
-        e.preventDefault();
+    const resetHandler= ()=>{
         setName("")
         setTel("")
         setStreet("")
